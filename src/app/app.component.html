@@ -1,4 +1,98 @@
-<div class="wrapper">
-  <p>content</p>
-</div>
-<router-outlet></router-outlet>
+<app-header>
+  <app-notifications>
+    <article class="bulletin covid">
+      <h2>Covid response</h2>
+      <p>
+        Due to lockdown and Covid19 restrictions Our staff are working remotely
+        during office hours. This means that the quickest and easiest way to
+        communicate with us is via email. If you have a general query, then
+        please email: enquiries@yanis-support-and-care.co.uk or use our contact
+        form on this website.
+      </p>
+      <h3>Do you want more information?</h3>
+      <p>
+        Please do not hesitate to call us to ask about our internal guidelines
+        as well as government regulations around Covid
+      </p>
+      <h3><span>Landline: </span> 01603 552146</h3>
+      <h3><span>Mobile: </span> 0756807463</h3>
+
+      <p>
+        We apologise for any inconvenience this may cause you and thank you for
+        your patience.
+      </p>
+    </article>
+  </app-notifications>
+  <div class="wrapper sitenav">
+    <app-brand routerLink="/" title="Yanis Support and Care Logo"> </app-brand>
+    <app-nav>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/about-us">About Yanis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/services">Our services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/staff">Staff Portal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/clients">Client Portal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/contact-us">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </app-nav>
+  </div>
+</app-header>
+<app-main>
+  <router-outlet></router-outlet>
+</app-main>
+<app-footer>
+  <app-tile class="contact-info">
+    <div class="address">
+      <p>Cavell House</p>
+      <p>Stannard Place</p>
+      <p>Suite 210J</p>
+      <p>Norwich</p>
+      <p>NR3 1YE</p>
+    </div>
+    <div class="call">
+      <ul>
+        <li>TEL: 01603 552146</li>
+        <li>MOB: 07568074063</li>
+      </ul>
+    </div>
+    <div class="company-info">
+      <p><strong>Company number: </strong>11613692</p>
+      <p><strong>Registered with ICO:</strong> ZA771448</p>
+      <p><strong>Policies and Procedures by</strong> QCS</p>
+    </div>
+  </app-tile>
+  <app-tile>
+    <ul>
+      <li><a routerLink="/about-us">About Yanis</a></li>
+      <li><a routerLink="/services">Our services</a></li>
+      <li><a routerLink="/staff">Staff Portal</a></li>
+      <li><a routerLink="/clients">Client Portal</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+  </app-tile>
+</app-footer>

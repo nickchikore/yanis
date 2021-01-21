@@ -1,19 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:wght@600&family=Roboto&display=swap");
 body {
-  @media screen and (min-width: 320px) {
-    background-color: red;
+  overflow-x: hidden;
+  h1,
+  h2,
+  h3 {
+    //font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    //letter-spacing: 0.05em;
   }
-  @media screen and (min-width: 481px) {
-    background-color: blue;
-  }
-  @media screen and (min-width: 769px) {
-    background-color: green;
-  }
-  @media screen and (min-width: 1025px) {
-    background-color: yellow;
-  }
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.025em;
+}
+
+//typography
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.25em;
+}
+//layout
+app-main {
+  position: relative;
+  background: #faf7fb;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  z-index: 1;
+}
+a {
+  cursor: pointer;
+}
+app-header {
+  display: block;
+  z-index: 2;
+  position: relative;
+}
+section {
+  display: flex;
+  flex-direction: column;
 }
 .wrapper {
   display: flex;
   flex-direction: column;
+
+  article {
+    padding: 8px;
+    h1,
+    h2,
+    h3 {
+      position: relative;
+      padding-bottom: 16px;
+      color: #662d91;
+      &:after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        height: 4px;
+        background: #662d91;
+        left: 20px;
+        right: 0;
+        opacity: 0.7;
+      }
+
+      &:before {
+        position: absolute;
+        content: "";
+        bottom: 8px;
+        height: 4px;
+        background: #662d91;
+        left: 20px;
+        right: 80%;
+        opacity: 0.7;
+      }
+    }
+  }
+  @media screen and (min-width: 320px) {
+  }
+  @media screen and (min-width: 481px) {
+  }
+  @media screen and (min-width: 769px) {
+    // .fullspread {
+    //   height: 100vh;
+    // }
+  }
+  @media screen and (min-width: 1025px) {
+    //background-color: yellow;
+  }
+}
+//banners
+app-banner {
+  //height: 80%;
+  background-repeat: no-repeat;
+  background-position: center left;
+  width: 100%;
+  background-size: cover;
+  min-height: 33vh;
+
+  &.staff {
+    background-image: url("assets/img/Picture3.jpg");
+  }
+  &.accomodation {
+    background-image: url("assets/img/Picture4.jpg");
+  }
+  &.mission {
+    background-image: url("assets/img/Picture2.jpg");
+  }
+  &.about {
+    background-image: url("assets/img/Picture5.jpg");
+  }
+  &.clients {
+    background-image: url("assets/img/Picture6.jpg");
+  }
+}
+
+//header
+.sitenav {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  background: #f1ecf4;
+  app-brand {
+    background-image: url("assets/img/yanis-logo.png");
+    height: 80%;
+    background-repeat: no-repeat;
+    background-position: center left;
+    width: 100%;
+    background-size: contain;
+  }
+  app-nav {
+    display: flex;
+    .navbar {
+      padding: 0;
+      button.navbar-toggler {
+        position: absolute;
+        right: 8px;
+        border: none;
+      }
+      .navbar-collapse {
+        position: absolute;
+        top: 81px;
+        right: -8px;
+        width: 75vw;
+        height: 100vh;
+        overflow: hidden;
+        background: #f1ecf4;
+      }
+      .navbar-nav {
+        padding: 6px;
+      }
+      .collapse {
+        transition: 350ms transform linear;
+        display: block;
+        transform: translateX(110%);
+        &.show {
+          display: block;
+          transform: translateX(0%);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 320px) {
+    height: 100px;
+    app-nav .navbar .navbar-collapse {
+      position: absolute;
+      top: 101px;
+      right: 0px;
+    }
+  }
+  @media screen and (min-width: 481px) {
+    height: 100px;
+  }
+  @media screen and (min-width: 769px) {
+    app-brand {
+      height: 100%;
+    }
+    height: 100px;
+  }
+  @media screen and (min-width: 1025px) {
+    height: 100px;
+  }
+}
+
+//navbar
+
+//banner
+
+app-banner {
+  display: flex;
+  img {
+    width: 100%;
+  }
+}
+
+//footer
+
+app-footer {
+  background-color: #662d91;
+  display: flex;
+  flex-direction: column;
+  color: #faf7fb;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      padding: 1em;
+      a {
+        color: #7cb7f7;
+      }
+    }
+  }
+  app-tile {
+    > div + div {
+      position: relative;
+    }
+    .call {
+      opacity: 0.6;
+    }
+    .company-info p {
+      display: flex;
+      justify-content: space-between;
+      strong {
+        font-weight: bold;
+      }
+    }
+    + app-tile {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        height: 1px;
+        background-color: white;
+        top: 0;
+      }
+    }
+  }
+}
+
+app-tile {
   padding: 16px;
+}
+
+//notifications
+
+app-notifications {
+  display: flex;
+  height: 75vh;
+  align-items: center;
+  background: #92278f;
+  color: white;
+  .bulletin.covid {
+    padding: 16px;
+    h2 {
+      font-size: 3em;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    height: auto;
+  }
+}
+
+//forms
+
+label {
+  color: #662d91;
+}
+button.btn.btn-primary {
+  background: #662d91;
+}
+section.fullspread {
+  @media screen and (min-width: 769px) {
+    display: flex;
+    padding: 16px;
+    flex-direction: row;
+    app-banner {
+      width: 50%;
+    }
+    > * + * {
+      padding-left: 16px;
+      width: 50%;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    padding: 0;
+    flex-direction: column;
+    app-banner {
+      width: 100vw;
+      height: 60vh;
+    }
+
+    > * + * {
+      padding: 16px;
+      width: 80%;
+      margin: 5vh auto;
+    }
+  }
 }
