@@ -1,6 +1,11 @@
 <div class="wrapper">
   <section class="fullspread">
-    <article>
+    <app-banner class="contact-us fh has-content">
+      <div class="banner-content">
+        <h2 class="display">Contact us Today!</h2>
+      </div>
+    </app-banner>
+    <article class="half-page purple-bg">
       <h3>Contact us</h3>
       <form>
         <div class="form-group">
@@ -12,9 +17,6 @@
             aria-describedby="emailHelp"
             placeholder="Enter email"
           />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
@@ -25,12 +27,7 @@
             placeholder="Password"
           />
         </div>
-        <!-- <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1"
-            >Check me out</label
-          >
-        </div> -->
+
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </article>

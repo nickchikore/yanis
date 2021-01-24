@@ -10,7 +10,6 @@ import { StaffComponent } from './staff/staff.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'about-us', component: AboutUsComponent},
   {path: 'clients', component: ClientsComponent},
   {path: 'services', component: ServicesComponent},
   {path: 'staff', component: StaffComponent},
